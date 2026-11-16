@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10243a" />
+  <meta name="description" content="Panel de seguimiento comercial y captación educativa a partir de la plantilla maestra de Eduqia." />
+  <title>Panel comercial | Eduqia</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="identity">
+      <div class="brand-symbol" aria-hidden="true">e<span>.</span></div>
+      <div><strong>EDUQIA</strong><span>Business intelligence</span></div>
+    </div>
+    <div class="side-caption">ESPACIO DE ANÁLISIS</div>
+    <nav aria-label="Secciones del panel" class="side-nav">
+      <a href="#general" data-nav="general" class="active"><span class="nav-icon">▦</span> Visión general</a>
+      <a href="#captacion" data-nav="captacion"><span class="nav-icon">◫</span> Captación y leads</a>
+      <a href="#matriculas" data-nav="matriculas"><span class="nav-icon">◎</span> Matrículas</a>
+      <a href="#inversion" data-nav="inversion"><span class="nav-icon">▤</span> Inversión y objetivos</a>
+      <a href="#acciones" data-nav="acciones"><span class="nav-icon">☷</span> Operaciones y calidad</a>
+    </nav>
+    <div class="side-bottom">
+      <div class="help-block"><span class="help-dot">?</span><div><strong>¿Cómo funciona?</strong><p>Importa tu Excel y explora los indicadores sin enviar los datos a ningún servidor.</p></div></div>
+      <div class="side-footer">Plantilla maestra · Versión 1.0</div>
+    </div>
+  </aside>
+
+  <main class="main-area" id="main">
+    <header class="header">
+      <div class="mobile-bar"><button id="menuBtn" class="icon-button" aria-label="Abrir menú">☰</button><strong>EDUQIA</strong></div>
+      <div class="header-copy"><div class="kicker" id="pageKicker">INTELIGENCIA COMERCIAL</div><h1 id="pageTitle">Visión general</h1><p id="pageSubtitle">Indicadores de captación, seguimiento y matriculación.</p></div>
+      <div class="header-actions">
+        <button class="button button-ghost" id="exportButton" type="button" title="Descargar datos para conservarlos en GitHub"><span class="action-icon">⇩</span> Exportar datos</button>
+        <button class="button button-primary" data-import type="button"><span class="action-icon">↑</span> Cargar Excel</button>
+      </div>
+    </header>
+    <section class="filters" aria-label="Filtros del informe">
+      <div class="filter-group"><label for="clientFilter">Cliente / centro</label><select id="clientFilter"></select></div>
+      <div class="filter-group"><label for="dateFilter">Semana de corte</label><select id="dateFilter"></select></div>
+      <div class="filter-group"><label for="periodFilter">Periodo de análisis</label><select id="periodFilter"><option value="all">Histórico acumulado</option><option value="4">Últimas 4 semanas</option><option value="12">Últimas 12 semanas</option><option value="26">Últimas 26 semanas</option></select></div>
+      <div class="source-info"><span class="status-light" id="sourceDot"></span><div><strong id="sourceLabel">Plantilla sin datos</strong><small id="sourceCount">Ningún registro importado</small></div></div>
+    </section>
+    <div id="dashboardContent" aria-live="polite"></div>
+    <footer class="footer"><span>EDUQIA · Seguimiento comercial educativo</span><span>Origen: plantilla-final.xlsx · Los ratios son agregados, no cohortes individuales.</span></footer>
+  </main>
+</div>
+<input type="file" id="fileInput" accept=".xlsx,.xls,.xlsm" hidden />
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
