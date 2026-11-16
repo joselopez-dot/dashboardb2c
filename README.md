@@ -96,3 +96,4 @@ La pestaña «Detalle leads» no incluye columna `Cliente`. Si el Excel agrupa v
 ## 7. Siguiente evolución posible
 
 Para un uso continuado por múltiples centros, lo siguiente sería introducir un almacén de datos privado, autenticación y una actualización automatizada desde Google Sheets/CRM. **GitHub Pages por sí solo no recibe ni guarda automáticamente archivos Excel**: la carga local se pierde al cerrar la sesión, salvo que publiques el JSON como se explica arriba.
+Publicación del dashboard.
